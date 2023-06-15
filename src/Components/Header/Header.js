@@ -33,17 +33,18 @@ const Header = () => {
             <Header2>
                     <LogoHold>
                         <Logo src={logo} alt="logo"/>
+                        <h6>U.S SMALL BUSINESS ADMINISTRATION</h6>
                     </LogoHold>
                     
                     {/* <Nav to='/' style={{color: "#fff", fontWeight: "bold", fontSize: "20px", display: "flex", alignItems: "center"}}> <BsFillPersonFill/> Sign Out</Nav> */}
                         <NavHold>
                         <Nav to='/'>Home</Nav>
-                        <Nav to='/'>About Us</Nav>
-                        <Nav to='/'>Grant Package</Nav>
-                        <Nav to='/'>Fund Raising</Nav>
-                        <Nav to='/'>Support</Nav>
+                        <Nav to='/about'>About Us</Nav>
+                        <Nav to='/grantpackages'>Grant / Loan Package</Nav>
+                        <Nav to='/support'>Support</Nav>
+                        {/* <Nav to='/fundraising'>Fund Raising</Nav> */}
                         <Line></Line>
-                        <SignUp>Apply Now</SignUp>
+                        <SignUp to="/form">Apply Now</SignUp>
                     </NavHold>
             </Header2>
             <BurgerHold onClick={() =>{
@@ -54,7 +55,7 @@ const Header = () => {
        </Wrapper>
                  {
         nav? (
-        <NavDiv data-aos="fade-right"> 
+        <NavDiv data-aos="fade-right">
           <SideNav setNav={setNav}/>
         </NavDiv>
         ) : null

@@ -9,6 +9,8 @@ import Hero6 from "./Hero6";
 import Hero7 from "./Hero7";
 import Hero8 from "./Hero8";
 import Hero9 from "./Hero9";
+import Land9 from "./Testimonial/Land9"
+import Hero10 from './Hero10';
 
 const Landingpage = () => {
   return (
@@ -22,6 +24,8 @@ const Landingpage = () => {
       <Hero7/>
       <Hero8/>
       <Hero9/>
+      <Hero10/>
+      <Land9/>
     </Container>
   )
 };

@@ -5,17 +5,23 @@ import Comp2 from "../Assets/comp2.png"
 import Comp3 from "../Assets/comp3.png"
 import Comp4 from "../Assets/comp4.png"
 import Comp5 from "../Assets/comp5.png"
+import Comp6 from "../Assets/chime.png"
+import Marquee from "react-fast-marquee";
+
 
 const Hero7 = () =>{
     return(
         <Container>
             <H1>Featured Company Donor</H1>
             <Wrapper>
+                <Marquee speed={50}>
                 <Img src={Comp1} alt="partner"/>
                 <Img src={Comp2} alt="partner"/>
                 <Img src={Comp3} alt="partner"/>
                 <Img src={Comp4} alt="partner"/>
                 <Img src={Comp5} alt="partner"/>
+                <Img src={Comp6} alt="partner"/>
+                </Marquee>
             </Wrapper>
         </Container>
     )
@@ -48,7 +54,7 @@ align-items: center;
 
 `;
 const Img = styled.img`
-width: 28%;
+width: 250px;
 height: 100px;
 margin:5px;
 `;

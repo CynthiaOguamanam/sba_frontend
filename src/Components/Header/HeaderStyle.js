@@ -4,7 +4,9 @@ import styled from 'styled-components';
 export const Container = styled.div`
 width: 100%;
 height: 100px;
-background: linear-gradient(360deg, #111D32,#263073);
+/* background: linear-gradient(360deg, #111D32,#263073); */
+background-color: white;
+box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -16,7 +18,7 @@ top: 0;
 @media Screen and (max-width: 768px){
     height: 80px;
     width: 100%;
-    background: linear-gradient(45deg, #111D32,#000911ef);;
+    /* background: linear-gradient(45deg, #111D32,#000911ef); */
 }
 
 `;
@@ -28,7 +30,8 @@ justify-content: center;
 height: 90%;
 /* background: linear-gradient(360deg, #111D32,#263073); */
 @media Screen and (max-width: 768px){
-    /* background: none; */
+    width: 80%;
+    justify-content: space-between;
 }
 `;
 export const Wrapper1 = styled.div`
@@ -158,14 +161,18 @@ margin-right: 30px;
     justify-content: space-between;
 }
 
+
 `;
 export const LogoHold = styled.div`
-width: 7%;
+width: 14%;
 height: 60px;
 display: flex;
 justify-content: center;
 align-items: center;
-
+h6{
+    color: #263073;
+    font-size: 13px;
+}
 @media Screen and (max-width: 768px){
     width: 25%;
     height: 80%;
@@ -173,7 +180,7 @@ align-items: center;
 }
 `;
 export const Logo = styled.img`
-width: 100%;
+width: 60%;
 height: 100%;
 /* margin-top: 20px; */
 
@@ -192,20 +199,22 @@ border-radius: 5px;
 `;
 
 export const NavHold = styled.div`
-width: 70%;
-background-color: #0F192C;
+width: 65%;
+/* background-color: #263073; */
+/* border: 1px solid linear-gradient(360deg, #111D32,#263073); */
+border: 1px solid #263073;
 border-radius: 0.3rem;
 display: flex;
 justify-content: space-between;
 align-items: center;
-padding: 0.2rem 0 0.2rem 1rem;
+padding: 0.2rem 0.2rem 0.2rem 1rem;
 height: 40%;
 @media Screen and (max-width: 768px){
     display: none;
 }
 `;
 export const Nav = styled(Link)`
-color: whitesmoke;
+color: #111D32;
 font-size: 13px;
 font-weight: 400;
 font-family: sans-serif;
@@ -226,8 +235,8 @@ text-decoration: none;
 // transition: all 350ms;
 // text-decoration: none;
 // `;
-export const SignUp = styled.div`
-padding: 0.7rem 1.5rem;
+export const SignUp = styled(Link)`
+padding: 0.6rem 1.5rem;
 font-size: 13px;
 font-weight: bold;
 color: #015ec9;
@@ -236,6 +245,7 @@ outline: none;
 border-radius: 0 0.3rem 0.3rem 0;
 /* border-radius: 0.3rem; */
 background-color: #fff;
+box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 text-decoration: none;
 
 :hover{
@@ -274,7 +284,7 @@ font-weight: bold;
 export const Line = styled.div`
 width: 1px;
 height: 100%;
-background-color: aliceblue;
+background-color: #263073;
 `;
 
 // background-image: linear-gradient(to right, #aa05a8, #212121);
