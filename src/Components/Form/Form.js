@@ -131,8 +131,8 @@ const FormJs = () => {
                     </InputHold>
                 </Middle>
                     <InputHold2>
-                        <Title>Tell us your reason for applying for grant / loan</Title>
-                        <Input2 placeholder='describe your application reasons' value={description} onChange={(e) => {setDescription(e.target.value)}}/>
+                        <Title>What are you applying for? (grant/loan) and state valid reasons why you should be considered for it.</Title>
+                        <Input2 placeholder='describe your application and reasons for application' value={description} onChange={(e) => {setDescription(e.target.value)}}/>
                     </InputHold2>
                     <InputHold>
                         <Title>Payment Details</Title>
