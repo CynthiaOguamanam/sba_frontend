@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
-import axios from "axios";
+import Axios from "axios";
 import { ClipLoader } from 'react-spinners';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
@@ -16,7 +16,7 @@ const FormJs = () => {
     const [phoneNumber, setPhoneNumber] = useState("")
     const [state, setState] = useState("")
     const [city, setCity] = useState("")
-    const [postal, setPostal] = useState("")
+    const [postalcode, setPostal] = useState("")
     const [request, setRequest] = useState("")
     const [recommend, setRecommend] = useState("")
     const [description, setDescription] = useState("")
@@ -25,7 +25,7 @@ const FormJs = () => {
     // const [acctname, setAcctname] = useState("")
 
 
-    const Data = {username, email, phoneNumber, addressLine1, addressLine2, city, state, postal, recommend, request, description, paymentdetails};
+    const Data = {username, email, phoneNumber, addressLine1, addressLine2, city, state, postalcode, recommend, request, description, paymentdetails};
 
     // const url = "http://localhost:4000/api/form";
     const onlineurl = "https://sba-backend.onrender.com/api/form";
@@ -34,8 +34,7 @@ const FormJs = () => {
         e.preventDefault();
         setLoading(true);
         // console.log(Data, "This is the Data");
-
-        axios.post(onlineurl, Data).then((res) =>{
+        Axios.post(onlineurl, Data).then((res) =>{
         localStorage.setItem("form", JSON.stringify(res.data));
 
         Swal.fire({
@@ -51,7 +50,7 @@ const FormJs = () => {
             Swal.fire({
                 icon:"error",
                 title: "Oops!!!",
-                text: `An error occured ${err}`
+                text: `An error occured ${err.response.data.message}`
                 // text: err.response.data.message
             });
             setLoading(false);
@@ -114,7 +113,7 @@ const FormJs = () => {
                 <Middle>
                     <InputHold>
                         <Title>Postal / Zip Code</Title>
-                        <Input placeholder='Input Your Postal / zip code' value={postal} onChange={(e) => {setPostal(e.target.value)}}/>
+                        <Input placeholder='Input Your Postal / zip code' value={postalcode} onChange={(e) => {setPostal(e.target.value)}}/>
                     </InputHold>
                     <InputHold>
                         <Title>Phone Number</Title>
@@ -139,7 +138,7 @@ const FormJs = () => {
                         <Title>Payment Details</Title>
                         <Input3 placeholder='Input payment details to receive grant / loan' value={paymentdetails} onChange={(e) => {setPaymentDetails(e.target.value)}}/>
                     </InputHold>
-                    <Button type='submit'>{loading ? <ClipLoader size={25} thickness={100} speed={100} color="rgba(255, 255, 255, 1)" secondaryColor="rgba(0, 0, 0, 0.44)" /> : "Submit" }</Button>
+                    <Button type='submit'>{loading ? <ClipLoader size={25} thickness={100} speed={100} color="rgba(255, 255, 255, 1)" secondarycolor="rgba(0, 0, 0, 0.44)" /> : "Submit" }</Button>
             </Form>
         </Wrapper>
     </Container>
