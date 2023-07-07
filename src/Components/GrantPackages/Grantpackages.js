@@ -6,6 +6,7 @@ import { FaChartBar, FaSeedling, FaChartPie, FaChalkboardTeacher, FaFunnelDollar
 
 
 const GrantPackages = () => {
+  
   return (
     <Container>
         <Wrapper>
