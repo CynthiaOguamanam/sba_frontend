@@ -16,7 +16,7 @@ const Support = () => {
     <Container>
         <Holder>
         <Wrapper>
-            <H1 data-aos="fade-down">Client support</H1>
+            <H1 data-aos="fade-down">Support</H1>
             <CardHold>
                 <Card>
                     <Icon/>
@@ -74,6 +74,7 @@ padding: 0px 0 30px 0;
 
 @media Screen and (max-width: 1280px){
     height: auto;
+    padding-top: 80px;
 }
 
 `;

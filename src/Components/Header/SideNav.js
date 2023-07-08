@@ -25,35 +25,27 @@ const SideNav = ({setNav}) =>{
             </Wrapp>
                 <MidNav>
                     <Div>
-                    <Span to='/'  onClick={()=>{
+                    <Span to='/form'  onClick={()=>{
                 setNav(false);
             }}>Apply Now</Span>
-                    {/* <Line></Line>
-                    <Span to='/'  onClick={()=>{
-                setNav(false);
-            }}>Sign Up</Span> */}
                     <Line></Line>
                     <Span to='/'  onClick={()=>{
                 setNav(false);
             }}>Home</Span>
                     <Line></Line>
-                    <Span to='/'  onClick={()=>{
+                    <Span to='/about'  onClick={()=>{
                 setNav(false);
             }}>About Us</Span>
                     <Line></Line>
-                     <Span to='/' onClick={() =>{
+                     <Span to='/grantpackages' onClick={() =>{
                         setNav(false);
                     }}>Grant Package</Span>
                     <Line></Line>
-                    {/* <Span to='/'  onClick={()=>{
-                setNav(false);
-            }}> Arbitage </Span>
-                    <Line></Line> */}
-                    <Span to='/'  onClick={()=>{
+                    <Span to='/grantpackages'  onClick={()=>{
                 setNav(false);
             }}>Fund Raising</Span>
                     <Line></Line>
-                    <Span to='/'  onClick={()=>{
+                    <Span to='/support'  onClick={()=>{
                 setNav(false);
             }}>Support</Span>
             <Line></Line>
