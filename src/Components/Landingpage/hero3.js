@@ -5,7 +5,7 @@ import bg from '../Assets/sbagroup.webp'
 const Hero3 = () => {
   return (
     <Container>
-        hh
+        
     </Container>
   )
 }

@@ -38,7 +38,6 @@ const FormJs = () => {
     const submitForm = (e) => {
         e.preventDefault();
         setLoading(true);
-        // console.log(Data, "This is the Data");
         Axios.post(onlineurl, Data).then((res) =>{
         localStorage.setItem("form", JSON.stringify(res.data));
 
