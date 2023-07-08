@@ -300,13 +300,18 @@ color: grey;
     width: 100%;
 }
 `;
-const Input2 = styled.textarea`
+const Input2 = styled.input`
 padding: 20px 0 200px 10px;
 border-radius: 0.4rem;
 outline: none;
 border: 1px solid #3B314E;
 color: grey;
 width:  100%;
+
+::placeholder{
+
+}
+
 @media Screen and (max-width: 768px){
     margin: 10px 0;
     width: 100%;
