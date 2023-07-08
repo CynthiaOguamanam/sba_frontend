@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Heroimg from '../Assets/sbaillus.webp'
 import AOS from "aos"
 import 'aos/dist/aos.css'
+import {Link} from "react-router-dom"
 
 const Hero1 = () => {
 
@@ -18,8 +19,8 @@ const Hero1 = () => {
                 <H1 data-aos="fade-down">HELPING <span style={{color: "#263073"}}>SMALL BUSINESSES, INDIVIDUALS</span> ACHIEVE THEIR BUSINESS AND INDIVIDUAL <span style={{color: "#263073"}}>GOALS</span></H1>
                 <P>SBA provides limited small business grants and grants to states and eligible community organizations, individuals to promote entrepreneurship.</P>
                 <ButtonHold>
-                    <Button>Grant Programs</Button>
-                    <Button>Apply Now</Button>
+                    <Button to="/grantpackages">Grant Programs</Button>
+                    <Button to="/form">Apply Now</Button>
                 </ButtonHold>
             </Left>
             <Right>
@@ -127,10 +128,11 @@ justify-content: space-between;
     flex-direction: column;
 }
 `;
-const Button = styled.button`
+const Button = styled(Link)`
 padding: 1rem 2rem;
 outline: none;
 border: none;
+text-decoration: none;
 border-radius: 5px;
 background: linear-gradient(360deg, #111D32,#263073);
 color: whitesmoke;
