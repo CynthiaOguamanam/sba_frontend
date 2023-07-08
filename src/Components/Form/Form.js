@@ -307,10 +307,6 @@ border: 1px solid #3B314E;
 color: grey;
 width:  100%;
 
-::placeholder{
-
-}
-
 @media Screen and (max-width: 768px){
     margin: 10px 0;
     width: 100%;
@@ -332,6 +328,12 @@ height: max-content;
 display: flex;
 justify-content: space-between;
 align-items: center;
+
+@media Screen and (max-width: 768px){
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
 `;
 const Button = styled.button`
 color: white;

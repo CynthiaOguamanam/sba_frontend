@@ -52,7 +52,7 @@ h5{
     height: max-content;
 }
 @media Screen and (max-width: 768px){
-    width: 100%;
+    width: 95%;
 }
 `;
 const IconHold = styled.div`
